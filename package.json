@@ -1,0 +1,14 @@
+{
+  "name": "thenextweb-copy",
+  "version": "1.0.0",
+  "description": "A visual copy of thenextweb.com homepage, no functionality.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w sass/ -o dist/css/ --recursive"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
