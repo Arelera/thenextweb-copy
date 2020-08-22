@@ -14,6 +14,9 @@ li {
 a {
   text-decoration: none; }
 
+.icon-l {
+  font-size: 22px; }
+
 .icon-m {
   font-size: 16px; }
 
@@ -201,6 +204,45 @@ a {
   .cover-story3 .cover-title {
     font-size: 28px; }
 
+#wrapper {
+  padding: 0 20px;
+  max-width: 1192px;
+  margin: 0 auto; }
+
+.section-title {
+  margin: 0.5rem 0; }
+  .section-title a {
+    font-weight: 1000;
+    color: #ff4422; }
+    .section-title a:hover {
+      color: black; }
+  .section-title .icon-l {
+    vertical-align: middle; }
+
+#latest-news {
+  margin: 0 0 56px 0;
+  padding: 32px 0 0 0; }
+  #latest-news #latest-news-flex {
+    display: flex;
+    flex-wrap: wrap; }
+
+.news-box-s {
+  padding: 12px;
+  max-height: 270px;
+  flex-basis: 25%;
+  max-width: 25%; }
+  .news-box-s .story-image {
+    width: 100%;
+    max-height: 135px;
+    object-fit: cover;
+    margin: 0 0 8px 0; }
+  .news-box-s .story-title {
+    font-size: 16px; }
+  .news-box-s .story-info {
+    margin: 0.2rem 0 0 0;
+    color: #aaa;
+    font-size: 13px; }
+
 @media screen and (max-width: 1212px) {
   #navbar-left li:last-child, #navbar-left li:nth-last-child(2) {
     display: none; } }
@@ -226,7 +268,10 @@ a {
       font-size: 28px; }
   .cover-story2 .cover-title,
   .cover-story3 .cover-title {
-    font-size: 16px; } }
+    font-size: 16px; }
+  .news-box-s {
+    flex-basis: 33.3333333%;
+    max-width: 33.3333333%; } }
 
 @media screen and (max-width: 768px) {
   #header-top {
@@ -247,7 +292,24 @@ a {
     #cover .cover-story1 {
       grid-row: 1/2; }
       #cover .cover-story1 .cover-title {
-        font-size: 16px; } }
+        font-size: 16px; }
+  #latest-news-flex {
+    flex-direction: column; }
+  .news-box-s {
+    max-width: 100%;
+    max-height: 75px;
+    display: flex;
+    padding: 0px;
+    margin: 0 0 8px 0; }
+    .news-box-s div {
+      margin: 0 0 0 12px; }
+    .news-box-s .story-title {
+      font-size: 14px; }
+    .news-box-s .story-image {
+      width: 75px;
+      height: 75px; }
+    .news-box-s .story-info {
+      font-size: 12px; } }
 
 @media screen and (max-width: 500px) {
   #navbar-left {
