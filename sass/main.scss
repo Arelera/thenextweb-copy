@@ -2,6 +2,7 @@ $text-xs: 11px;
 $text-s: 12px;
 $text-m: 13px;
 $text-l: 14px;
+$text-xl: 18px;
 $title-l: 56px;
 $title-m: 28px;
 $title-s: 16px;
@@ -15,7 +16,7 @@ $primary-color: #ff4422;
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #eee;
+  background: #fff;
   overflow-x: hidden;
 }
 
@@ -69,6 +70,13 @@ a {
 
 #header {
   width: 100vw;
+  position: sticky;
+  top: 0;
+  z-index: 15;
+}
+
+#header-top {
+  position: relative;
 }
 
 #header-top3 {
@@ -348,6 +356,85 @@ a {
   }
 }
 
+// latest fundings
+#fundings {
+  display: flex;
+  //flex-wrap: wrap;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  .title-info {
+    display: inline-block;
+    color: $primary-color;
+    a {
+      cursor: pointer;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+.funding-box {
+  position: relative;
+  padding: 12px; //
+  max-width: 25%;
+  flex-basis: 25%;
+  max-height: 310px;
+  .funder-img {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    margin: 10px;
+  }
+  .funder-name {
+    font-size: $text-xl;
+    color: #fff;
+    background: $primary-color;
+    padding: 10px 16px 10px 84px;
+  }
+  .fund-amount {
+    padding: 10px 16px 10px 84px;
+    background: #ffebe8;
+    .fund-money {
+      font-size: $text-xl;
+      font-weight: 600;
+    }
+    .fund-type {
+      font-size: $text-xs;
+    }
+  }
+  .funder-services {
+    padding: 16px;
+    font-size: $text-m;
+    background: #fffaf8;
+    border-bottom: 1px solid $primary-color;
+    .icon-l {
+      margin: 0 6px 0 0;
+    }
+    p {
+      &:first-child {
+        margin: 0 0 8px 0;
+      }
+      .icon-l {
+        vertical-align: middle;
+      }
+    }
+  }
+  .fund-info {
+    background: #fffaf8;
+    font-size: $text-s;
+    line-height: 1.6;
+    padding: 10px 16px 16px;
+    .light-text {
+      color: #aaa;
+      white-space: nowrap;
+    }
+  }
+}
+
 //
 
 // media queries
@@ -405,6 +492,21 @@ a {
     flex-basis: 33.3333333%;
     max-width: 33.3333333%;
   }
+  // fund-section
+  #fund-section {
+    .section-header {
+      display: block;
+    }
+    #fundings {
+      .funding-box {
+        max-width: 33.3333333%;
+        flex-basis: 33.3333333%;
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -458,6 +560,17 @@ a {
     }
     .story-info {
       font-size: $text-s;
+    }
+  }
+  // fund-section
+  #fund-section {
+    #fundings {
+      flex-direction: column;
+      .funding-box {
+        max-width: 100%;
+        flex-basis: 100%;
+        padding: 8px;
+      }
     }
   }
 }
