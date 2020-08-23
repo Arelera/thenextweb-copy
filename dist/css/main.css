@@ -7,9 +7,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #fff;
   overflow-x: hidden; }
-
-li {
-  list-style: none; }
+  body li {
+    list-style: none; }
 
 a {
   text-decoration: none; }
@@ -28,6 +27,10 @@ a {
 
 .tnw-svg-s {
   height: 16px;
+  width: auto; }
+
+.tnw-svg-xs {
+  height: 12px;
   width: auto; }
 
 .btn {
@@ -225,10 +228,10 @@ a {
   .section-title .icon-l {
     vertical-align: middle; }
 
-#latest-news {
+.latest-news {
   margin: 0 0 56px 0;
   padding: 32px 0 0 0; }
-  #latest-news #latest-news-flex {
+  .latest-news .latest-news-flex {
     display: flex;
     flex-wrap: wrap; }
 
@@ -248,6 +251,9 @@ a {
     margin: 0.2rem 0 0 0;
     color: #aaa;
     font-size: 13px; }
+    .news-box-s .story-info .deal-price {
+      font-size: 14px;
+      color: #555; }
 
 #fundings {
   display: flex; }
@@ -267,6 +273,7 @@ a {
 .funding-box {
   position: relative;
   padding: 12px;
+  margin-bottom: 44px;
   max-width: 25%;
   flex-basis: 25%;
   max-height: 310px; }
@@ -308,6 +315,124 @@ a {
       color: #aaa;
       white-space: nowrap; }
 
+#categories-section {
+  display: flex;
+  flex-wrap: wrap; }
+
+.cat-box {
+  flex-basis: 33.3333333%;
+  max-width: 33.3333333%;
+  padding: 8px;
+  margin-bottom: 24px; }
+  .cat-box .most-popular {
+    background: linear-gradient(#ffffff00, #000), url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2020/08/header-image-switch-pro-controller-FINAL-368x276.png") center/cover no-repeat;
+    width: 100%;
+    padding-top: 75%;
+    position: relative; }
+    .cat-box .most-popular div {
+      padding: 14px;
+      position: absolute;
+      bottom: 0;
+      color: #fff; }
+      .cat-box .most-popular div .pop-cat {
+        font-size: 13px;
+        font-weight: 100; }
+      .cat-box .most-popular div .story-title {
+        font-size: 20px;
+        margin: 0 0 6px 0; }
+        .cat-box .most-popular div .story-title a {
+          color: #fff; }
+      .cat-box .most-popular div p {
+        font-size: 13px;
+        color: #fff9; }
+  .cat-box .latest {
+    background: rgba(255, 68, 34, 0.06);
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0; }
+    .cat-box .latest div {
+      padding: 10px 14px 0 14px;
+      color: #ff4422; }
+      .cat-box .latest div h5 {
+        font-weight: 100;
+        font-size: 13px;
+        margin-bottom: 2px; }
+      .cat-box .latest div h3 {
+        font-size: 14px; }
+    .cat-box .latest .latest-img {
+      width: 96px;
+      height: 96px;
+      right: 0;
+      object-fit: cover; }
+  .cat-box .headline {
+    list-style: disc;
+    list-style-position: inside;
+    color: #ff4422;
+    font-size: 13px;
+    line-height: 1.5;
+    border-bottom: 1px solid #eee;
+    padding: 6px 0 6px 14px; }
+    .cat-box .headline a {
+      color: #555; }
+      .cat-box .headline a:hover {
+        color: #000; }
+
+#footer {
+  width: 100vw; }
+
+#footer-links {
+  padding: 42px 0 28px 0;
+  height: 160px;
+  width: 100%;
+  background: #131313; }
+  #footer-links .icon-l {
+    color: #efefef; }
+
+.links-circles,
+.links-about {
+  max-width: 90%;
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; }
+  .links-circles li:hover,
+  .links-about li:hover {
+    color: #fff; }
+
+.links-circles {
+  flex-wrap: wrap;
+  margin-bottom: 21px; }
+
+.link-circle {
+  margin: 0 0.5rem; }
+  .link-circle a {
+    background: #333;
+    border-radius: 50%;
+    display: block;
+    height: 40px;
+    padding: 7px;
+    text-align: center;
+    width: 40px;
+    border: 2px solid #333; }
+    .link-circle a:hover {
+      background: #131313; }
+  .link-circle .icon-l {
+    vertical-align: middle; }
+
+.links-about {
+  max-width: 90%; }
+  .links-about li {
+    margin: 0 6px;
+    font-size: 13px; }
+
+#footer-legal {
+  height: 98px;
+  width: 100%;
+  background: #000;
+  color: #aaa;
+  text-align: center;
+  padding: 39px 0; }
+
 @media screen and (max-width: 1212px) {
   #navbar-left li:last-child, #navbar-left li:nth-last-child(2) {
     display: none; } }
@@ -343,7 +468,10 @@ a {
     max-width: 33.3333333%;
     flex-basis: 33.3333333%; }
     #fund-section #fundings .funding-box:last-child {
-      display: none; } }
+      display: none; }
+  .cat-box {
+    flex-basis: 50%;
+    max-width: 50%; } }
 
 @media screen and (max-width: 768px) {
   #header-top {
@@ -365,7 +493,7 @@ a {
       grid-row: 1/2; }
       #cover .cover-story1 .cover-title {
         font-size: 16px; }
-  #latest-news-flex {
+  .latest-news-flex {
     flex-direction: column; }
   .news-box-s {
     max-width: 100%;
@@ -387,7 +515,12 @@ a {
     #fund-section #fundings .funding-box {
       max-width: 100%;
       flex-basis: 100%;
-      padding: 8px; } }
+      padding: 8px; }
+  .cat-box {
+    flex-basis: 100%;
+    max-width: 100%; }
+  #footer-legal {
+    font-size: 13px; } }
 
 @media screen and (max-width: 500px) {
   #navbar-left {

@@ -18,10 +18,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #fff;
   overflow-x: hidden;
-}
-
-li {
-  list-style: none;
+  li {
+    list-style: none;
+  }
 }
 
 a {
@@ -46,6 +45,10 @@ a {
 
 .tnw-svg-s {
   height: 16px;
+  width: auto;
+}
+.tnw-svg-xs {
+  height: 12px;
   width: auto;
 }
 
@@ -325,10 +328,10 @@ a {
   }
 }
 
-#latest-news {
+.latest-news {
   margin: 0 0 56px 0;
   padding: 32px 0 0 0;
-  #latest-news-flex {
+  .latest-news-flex {
     display: flex;
     flex-wrap: wrap;
   }
@@ -353,6 +356,10 @@ a {
     margin: 0.2rem 0 0 0;
     color: #aaa;
     font-size: $text-m;
+    .deal-price {
+      font-size: $text-l;
+      color: #555;
+    }
   }
 }
 
@@ -380,6 +387,7 @@ a {
 .funding-box {
   position: relative;
   padding: 12px; //
+  margin-bottom: 44px;
   max-width: 25%;
   flex-basis: 25%;
   max-height: 310px;
@@ -435,9 +443,166 @@ a {
   }
 }
 
+// Categories section
+#categories-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cat-box {
+  flex-basis: 33.3333333%;
+  max-width: 33.3333333%;
+  padding: 8px;
+  margin-bottom: 24px;
+
+  .most-popular {
+    background: linear-gradient(#ffffff00, #000),
+      url('https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2020/08/header-image-switch-pro-controller-FINAL-368x276.png')
+        center / cover no-repeat;
+    width: 100%;
+    //height: 0;
+    padding-top: 75%;
+    position: relative;
+
+    div {
+      padding: 14px;
+      position: absolute;
+      bottom: 0;
+      color: #fff;
+      .pop-cat {
+        font-size: $text-m;
+        font-weight: 100;
+      }
+      .story-title {
+        font-size: 20px;
+        margin: 0 0 6px 0;
+        a {
+          color: #fff;
+        }
+      }
+      p {
+        font-size: $text-m;
+        color: #fff9;
+      }
+    }
+  }
+  .latest {
+    background: rgba(255, 68, 34, 0.06);
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+    div {
+      padding: 10px 14px 0 14px;
+      color: $primary-color;
+      h5 {
+        font-weight: 100;
+        font-size: $text-m;
+        margin-bottom: 2px;
+      }
+      h3 {
+        font-size: $text-l;
+      }
+    }
+
+    .latest-img {
+      width: 96px;
+      height: 96px;
+      right: 0;
+      object-fit: cover;
+    }
+  }
+  .headline {
+    list-style: disc;
+    list-style-position: inside;
+    color: $primary-color;
+    font-size: $text-m;
+    line-height: 1.5;
+    border-bottom: 1px solid #eee;
+    padding: 6px 0 6px 14px;
+    a {
+      color: #555;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+// Footer
+#footer {
+  width: 100vw;
+}
+
+#footer-links {
+  padding: 42px 0 28px 0;
+  height: 160px;
+  width: 100%;
+  background: #131313;
+  .icon-l {
+    color: #efefef;
+  }
+}
+
+.links-circles,
+.links-about {
+  max-width: 90%;
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+  li {
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+.links-circles {
+  flex-wrap: wrap;
+  margin-bottom: 21px;
+}
+
+.link-circle {
+  margin: 0 0.5rem;
+  a {
+    background: #333;
+    border-radius: 50%;
+    display: block;
+    height: 40px;
+    padding: 7px;
+    text-align: center;
+    width: 40px;
+    border: 2px solid #333;
+    &:hover {
+      background: #131313;
+    }
+  }
+  .icon-l {
+    vertical-align: middle;
+  }
+}
+
+.links-about {
+  max-width: 90%;
+
+  li {
+    margin: 0 6px;
+    font-size: $text-m;
+  }
+}
+
+#footer-legal {
+  height: 98px;
+  width: 100%;
+  background: #000;
+  color: #aaa;
+  text-align: center;
+  padding: 39px 0;
+}
+
 //
 
-// media queries
+// MEDIA QUERIES ------------------------------------------------
 @media screen and (max-width: 1212px) {
   #navbar-left {
     li {
@@ -507,6 +672,11 @@ a {
       }
     }
   }
+  // Categories section
+  .cat-box {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -539,7 +709,7 @@ a {
     }
   }
   // latest news
-  #latest-news-flex {
+  .latest-news-flex {
     flex-direction: column;
   }
   .news-box-s {
@@ -572,6 +742,15 @@ a {
         padding: 8px;
       }
     }
+  }
+  // Category section
+  .cat-box {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  // Footer
+  #footer-legal {
+    font-size: $text-m;
   }
 }
 
